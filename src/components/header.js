@@ -42,7 +42,7 @@ const headerAppender = (selector) => {
 
   const headerEntry = document.querySelector(selector);
 
-  const newHeader = Header('title', 'date', 'temp');
+  const newHeader = Header('BloomTech Times', 'Dec 3rd, 2021', '62°');
   
   headerEntry.appendChild(newHeader);
 

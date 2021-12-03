@@ -33,13 +33,13 @@ const Card = (article) => {
 
   image.src = article.authorPhoto;
   headDiv.textContent = article.headline;
-  nameSpan.textContent =`By ${article.authorName}`;
+  nameSpan.textContent =`By ` + article.authorName;
 
   card.appendChild(headDiv);
   card.appendChild(authorDiv);
   authorDiv.appendChild(imgContainer);
   imgContainer.appendChild(image);
-  imgContainer.appendChild(nameSpan);
+  authorDiv.appendChild(nameSpan);
 
   function logHead (){
     console.log('hello');
@@ -59,7 +59,7 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-  axios.get('http://localhost:5000/api/articles')
+  axios.get('https://localhost:5000/api/articles')
   .then(resp => {
     console.log(resp.data.articles);
     for(let i = 0; i < Object.keys(resp.data.articles).length; i++){
